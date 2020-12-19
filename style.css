@@ -337,7 +337,7 @@ h1 {
     position: absolute;
     display: flex;
     justify-content: center;
-    bottom: 0px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     color: grey;

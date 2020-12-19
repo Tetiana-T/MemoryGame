@@ -28,7 +28,7 @@ function ActivateTheme(theme) {
             break;
         case "superhero":
             choosenTheme = games.superhero;
-            CreateGameBoard(games.superhero, games.superheroNames, games.superheroNames, 16, "sixteen-cards", "images/superHero/burglar.svg", "dark-card", "dark-back-card");
+            CreateGameBoard(games.superhero, games.superheroNames, games.superheroNames, 16, "sixteen-cards", "images/superhero/burglar.svg", "dark-card", "dark-back-card");
             UpdateUIAfterCreatingGameBoard('url("./images/superhero/superHero.jpg")');
             break;
         case "wildwest":
