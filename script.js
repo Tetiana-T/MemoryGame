@@ -1,33 +1,40 @@
 function Play(theme) {
     ClearAndUpdateTimeAndScore();
     ActivateTheme(theme);
+    HideTheFirstScreen();
     idOfBtn = theme;
+}
+
+function HideTheFirstScreen() {
+    //preElt.classList.add("animation");
+    setTimeout(function() {
+        preElt.classList.add("animation");;
+    }, 300);
 }
 
 function UpdateUIAfterCreatingGameBoard(background) {
     const cards = document.querySelectorAll('.card-container');
     cards.forEach(card => card.addEventListener('click', FlipCard));
     state.classList.remove("hidden");
-    preElt.classList.add("animation");
     document.body.style.backgroundImage = background;
 }
 
 function ActivateTheme(theme) {
     switch (theme) {
         case "animals":
+            choosenTheme = games.animals;
             CreateGameBoard(games.animals, games.animalsNames, games.animalsNames, 12, "twelve-cards", "images/animal/confused.svg", "card", "back-card");
             UpdateUIAfterCreatingGameBoard('url("./images/animal/snowymountains.jpg")');
-            choosenTheme = games.animals;
             break;
         case "superhero":
+            choosenTheme = games.superhero;
             CreateGameBoard(games.superhero, games.superheroNames, games.superheroNames, 16, "sixteen-cards", "images/superHero/burglar.svg", "dark-card", "dark-back-card");
             UpdateUIAfterCreatingGameBoard('url("./images/superhero/superHero.jpg")');
-            choosenTheme = games.superhero;
             break;
         case "wildwest":
             CreateGameBoard(games.wildwest, games.wildWestNames, games.wildWestNames, 16, "sixteen-cards", "images/wildwest/back_desert.svg", "dark-card", "dark-back-card");
-            UpdateUIAfterCreatingGameBoard('url("./images/wildwest/westbackground.png")');
             choosenTheme = games.superhero;
+            UpdateUIAfterCreatingGameBoard('url("./images/wildwest/westbackground.jpg")');
             break;
     }
     StartTimer();
