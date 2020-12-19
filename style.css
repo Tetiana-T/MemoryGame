@@ -1,0 +1,405 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    background-image: url("./images/main-background.jpg");
+    background-repeat: no-repeat;
+    background-color: #E7F3F3;
+    background-size: 100% 100%;
+    height: 100vh;
+}
+
+
+/* PRE modal window */
+
+#pre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(19, 19, 19, 0.507);
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.animation {
+    animation-name: myAnimation;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+}
+
+.container-themes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#themes {
+    margin: auto;
+    padding: 30px;
+    width: 300px;
+    background: #E7F3F3;
+    color: #326da8;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border-radius: 2%;
+}
+
+#themes button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: solid 0.5px;
+    background: white;
+    color: #326da8;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Gloria Hallelujah', cursive;
+    width: 100%;
+}
+
+#themes button:hover {
+    background: #6186aa;
+    background: linear-gradient(90deg, rgba(50, 109, 168, 1) 0%, rgba(207, 241, 241, 1) 100%);
+    background-size: 300%;
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* Main part */
+
+.main {
+    margin: auto;
+    display: block;
+    margin-bottom: 11%;
+    margin-top: 40px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    width: 570px;
+    height: 570px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card-container {
+    margin: 3px;
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
+    transform: scale(1);
+    transition: transform .3s;
+}
+
+.twelve-cards {
+    width: calc(25% - 12px);
+    height: calc(33.333% - 15px);
+}
+
+.sixteen-cards {
+    width: calc(30.333% - 40px);
+    height: calc(30.333% - 40px);
+}
+
+.main-card {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgb(161, 160, 160);
+    backface-visibility: hidden;
+}
+
+.card,
+.back-card {
+    border: 3px ridge #b8e5fa;
+    background: #d5f7f7;
+}
+
+.dark-card {
+    border: 3px ridge #082A30;
+    background: #4D455C;
+}
+
+.dark-back-card {
+    border: 3px ridge #323333;
+    background: #8f9192;
+}
+
+.card-container:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.card-container.flip {
+    transform: rotateY(180deg);
+}
+
+.card,
+.dark-card {
+    transform: rotateY(180deg);
+}
+
+.pulse {
+    animation-name: pulse;
+    animation-duration: 3000ms;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    opacity: 0.7;
+    transform: none;
+}
+
+.shake {
+    animation-name: shake;
+    animation-duration: .75s;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    transform: none;
+}
+
+
+/* STATUS bar */
+
+#time {
+    float: left;
+}
+
+#time::after {
+    content: " sec";
+}
+
+#score {
+    float: right;
+}
+
+#score::after {
+    content: " points";
+}
+
+#state {
+    width: 100%;
+    float: left;
+    color: black;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    -webkit-text-fill-color: rgba(201, 201, 201, 0.849);
+    font-weight: 900;
+    font-size: 25px;
+    font-family: 'Gloria Hallelujah', bold;
+}
+
+
+/*
+ * Style for congratulations part
+ */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(19, 19, 19, 0.507);
+    text-align: center;
+    transition: opacity 500ms;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.popup {
+    margin: 30px auto;
+    padding: 15px;
+    background: #E7F3F3;
+    border-radius: 2px;
+    width: 23%;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+    color: #326da8;
+}
+
+.popup {
+    top: 10px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #326da8;
+    border-radius: 3%;
+}
+
+.popup .content-1,
+.content-2 {
+    overflow: auto;
+    text-align: center;
+}
+
+.show {
+    visibility: visible !important;
+    opacity: 100 !important;
+}
+
+.btn-container {
+    display: flex;
+}
+
+#play-again,
+#menu {
+    padding: 0.2rem 1rem;
+    font-size: 1rem;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 40%;
+    font-family: 'Gloria Hallelujah', cursive;
+    background: #E7F3F3;
+    color: #326da8;
+    border-radius: 5px;
+    border-color: #326da8;
+    cursor: pointer;
+}
+
+#play-again:hover,
+#menu:hover {
+    background: #6186aa;
+    background: linear-gradient(90deg, rgba(50, 109, 168, 1) 0%, rgba(207, 241, 241, 1) 100%);
+    background-size: 300%;
+    color: white;
+}
+
+
+/* Media queries */
+
+@media (max-width: 480px) {
+    body {
+        display: flex;
+        background-color: #E7F3F3;
+    }
+    .main {
+        display: block;
+        justify-content: center;
+        margin-top: 30%;
+    }
+    .container {
+        width: 450px;
+        height: 430px;
+        margin: auto;
+        display: flex;
+        perspective: 1000px;
+    }
+    #time,
+    #score {
+        float: none;
+        display: block;
+        margin: 20px;
+    }
+    .popup {
+        margin: 20px auto;
+        width: 80%;
+    }
+}
+
+
+/* Footer section */
+
+.footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 0.8rem;
+}
+
+.footer_attribution {
+    text-align: center;
+}
+
+
+/* Animation */
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.90);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+@keyframes myAnimation {
+    100% {
+        display: none;
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+}

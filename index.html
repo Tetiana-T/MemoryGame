@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+        </div>
+        <div id="state" class="hidden">
+            <span class="time"></span>
+            <span id="score">0</span>
+        </div>
+    </div>
+    <section id="pre" class="">
+        <div id="themes">
+            <h1>Memory Game</h1>
+            <h4>Choose your theme!</h4>
+            <div class="container-themes">
+                <button id="animals" class="themes" title="Animals" onclick="Play(this.id)">Animal</button>
+                <button id="superhero" class="themes" title="Superhero" onclick="Play(this.id)">Superhero</button>
+                <button id="wildwest" class="themes" title="WildWest" onclick="Play(this.id)">Wild West</button>
+            </div>
+
+        </div>
+
+    </section>
+    <div id="popup1" class="overlay hidden">
+        <div class="popup">
+            <div class="content-1">
+                <h2> Congratulations <br>you finished 🎉</h2>
+            </div>
+            <div class="content-2">
+                <p>You made <span id=finalMove> </span> moves </p>
+                <p>You made <span id=finalPoints> </span> points </p>
+                <p>in <span id=totalTime> </span> </p>
+            </div>
+            <div class="btn-container">
+                <button id="play-again" onclick="PlayAgain()">
+                Play again </a>
+            </button>
+                <button id="menu" onclick="BackToMainMenu()">
+                Choose new theme </a>
+            </button>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer" data-anim>
+        <div class="footer_attribution">
+            <p class="footer_text"> Powered by Tetiana <i class="fa fa-heart-o" style="font-size:14px;color:red"></i></p>
+
+        </div>
+    </footer>
+</body>
+<script src="constants.js"></script>
+<script src="script.js" defer></script>
+
+</html>
