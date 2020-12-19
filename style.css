@@ -131,6 +131,7 @@ h1 {
     border-radius: 5px;
     box-shadow: 2px 2px rgb(161, 160, 160);
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .card,

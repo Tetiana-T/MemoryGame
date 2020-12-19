@@ -62,7 +62,6 @@ function CreateGameBoard(array, alt, datasetName, randomNumber, cardSize, backSi
 function FlipCard() {
     if (lockBoard) return;
     if (this === firstCard) return;
-
     this.classList.add('flip');
 
     if (!hasFlippedCard) {
