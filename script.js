@@ -9,7 +9,7 @@ function HideTheFirstScreen() {
     //preElt.classList.add("animation");
     setTimeout(function() {
         preElt.classList.add("animation");;
-    }, 300);
+    }, 500);
 }
 
 function UpdateUIAfterCreatingGameBoard(background) {
@@ -123,7 +123,7 @@ function ResetBoard() {
 // @description game timer
 function StartTimer() {
     interval = setInterval(function() {
-        timer.innerHTML = "TIME   " + minute + " : " + second;
+        timer.innerHTML = "TIME:   " + minute + " : " + second;
         second++;
         if (second == 60) {
             minute++;

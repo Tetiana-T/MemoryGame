@@ -8,7 +8,6 @@ body {
     display: flex;
     background-repeat: no-repeat;
     background-color: #E7F3F3;
-    background-size: 100% 100%;
     height: 100vh;
 }
 
@@ -306,6 +305,7 @@ h1 {
     body {
         display: flex;
         background-color: #E7F3F3;
+        width: 100%;
     }
     .main {
         display: block;
@@ -324,6 +324,9 @@ h1 {
         float: none;
         display: block;
         margin: 20px;
+    }
+    #state {
+        margin-left: 5%;
     }
     .popup {
         margin: 20px auto;
